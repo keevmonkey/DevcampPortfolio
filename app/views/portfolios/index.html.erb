@@ -1,7 +1,7 @@
 <h1>These are some items</h1>
 
 <% @portfolio_items.each do |portfolio_item| %>
-  <%= image_tag(portfolio_item.main_image) %>
+  <%= image_tag(portfolio_item.main_image) unless portfolio_item.main_image.nil? %>
   <h3><%= portfolio_item.title %></h3>
   <p><%= portfolio_item.subtitle %></p>
   <p><%= portfolio_item.body %></p>

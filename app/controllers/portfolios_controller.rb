@@ -1,5 +1,5 @@
 class PortfoliosController < ApplicationController
-  before_action :set_portfolio_item, only: [:show, :edit]
+  before_action :set_portfolio_item, only: [:show, :edit, :update]
 
   def index
     @portfolio_items = Portfolio.all
@@ -25,6 +25,13 @@ class PortfoliosController < ApplicationController
   end
 
   def update
+    respond_to do |format|
+      if @portfolio_item.update(portfolio_item_params)
+        format.html { redirect_to @portfolio_item, notice: 'Portfolio was successfully updated.' }
+      else
+        format.html { render :edit }
+      end
+    end
   end
 
   def show

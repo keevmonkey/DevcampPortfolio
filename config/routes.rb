@@ -1,9 +1,9 @@
 Rails.application.routes.draw do
   resources :portfolios
-  get 'pages/about'
-  get 'pages/contacts'
+  get 'about', to: 'pages#about'
+  get 'contact', to: 'pages#contact'
   resources :blogs
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root 'pages#home'
+  # root 'pages#home' // this works as well
+  root to: 'pages#home'
 end

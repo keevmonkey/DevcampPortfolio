@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   resources :portfolios, except: [:show]
   get 'portfolio/:id', to: 'portfolios#show', as: 'portfolio_show'  # Overide default show action
+  get 'angular-portfolio', to: 'portfolios#angular_items', as: 'portfolio_angular'
 
   get 'about', to: 'pages#about'
   get 'contact', to: 'pages#contact'

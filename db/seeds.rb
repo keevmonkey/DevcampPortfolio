@@ -6,11 +6,16 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+3.times do |topic|
+  Topic.create!(title: "Topic: #{topic}")
+end
+puts "=== 3 Topics created ==="
 
 10.times do |blog|
   Blog.create!(
     title: "This is a post about #{Faker::Games::Fallout.unique.character}",
-    body: Faker::Games::Fallout.quote
+    body: Faker::Games::Fallout.quote,
+    topic_id: Topic.last.id
   )
 end
 puts "=== 10 Blog posts created ==="

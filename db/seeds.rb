@@ -31,6 +31,13 @@ puts "=== 10 Blog posts created ==="
 end
 puts "=== 9 Portfolio items created ==="
 
+3.times do |technology|
+  Portfolio.last.technologies.create!(
+    name: "Technology #{technology}"
+  )
+end
+puts "=== 3 Technologies created for last portfolio item ==="
+
 5.times do |skills|
   Skill.create!(
     title: Faker::Games::Fallout.faction,

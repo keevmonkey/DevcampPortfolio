@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_05_04_130709) do
+ActiveRecord::Schema.define(version: 2019_05_04_133445) do
 
   create_table "blogs", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "title"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2019_05_04_130709) do
     t.integer "percent_utilized"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.text "badge"
   end
 
   create_table "topics", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

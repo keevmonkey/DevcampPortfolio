@@ -5,6 +5,12 @@
   <p><%= @portfolio_item.body %></p>
 </div>
 
+<div>
+  <% @portfolio_item.technologies.each do |t| %>
+    <p><%= t.name %></p>
+  <% end %>
+</div>
+
 <%= link_to 'edit', edit_portfolio_path %>
 <%= link_to 'Back', portfolios_path %>
 <%= link_to 'Delete!', portfolio_path, method: :delete, data: { confirm: 'Are you certain?' } %>

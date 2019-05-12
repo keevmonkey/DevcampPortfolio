@@ -1,4 +1,10 @@
 GIT
+  remote: https://github.com/keevmonkey/khui_View_tool
+  revision: 9f04b448074e3e6e445cd5ac047c736f34be3cae
+  specs:
+    khui_View_tool (0.1.0)
+
+GIT
   remote: https://github.com/stympy/faker.git
   revision: 59a92644d5583828add1c68351074f6e52c6deb6
   branch: master
@@ -251,6 +257,7 @@ DEPENDENCIES
   friendly_id (~> 5.2.4)
   jbuilder (~> 2.5)
   jquery-rails
+  khui_View_tool!
   listen (>= 3.0.5, < 3.2)
   mysql2 (>= 0.4.4, < 0.6.0)
   pry-byebug

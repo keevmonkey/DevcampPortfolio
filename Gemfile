@@ -33,6 +33,8 @@ gem 'devise', '~> 4.2'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
+gem 'khui_View_tool', git: 'https://github.com/keevmonkey/khui_View_tool'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

@@ -15,4 +15,8 @@ module ApplicationHelper
       content_tag(:h4, greeting, class: "source-greeting")
     end
   end
+
+  def copyright_generator
+    KhuiViewTool::Renderer.copyright("Kevin Hui", "All Rights Reserved")
+  end
 end

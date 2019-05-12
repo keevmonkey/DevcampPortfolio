@@ -33,7 +33,11 @@ gem 'devise', '~> 4.2'
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 
+# Personal view helper gem that I created for this app
 gem 'khui_View_tool', git: 'https://github.com/keevmonkey/khui_View_tool'
+
+# Authorisation
+gem 'petergate', '~> 2.0', '>= 2.0.1'
 
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'

@@ -133,6 +133,8 @@ GEM
     pastel (0.7.2)
       equatable (~> 0.5.0)
       tty-color (~> 0.4.0)
+    petergate (2.0.1)
+      activerecord (> 4.0.0)
     popper_js (1.14.5)
     pry (0.12.2)
       coderay (~> 1.1.0)
@@ -260,6 +262,7 @@ DEPENDENCIES
   khui_View_tool!
   listen (>= 3.0.5, < 3.2)
   mysql2 (>= 0.4.4, < 0.6.0)
+  petergate (~> 2.0, >= 2.0.1)
   pry-byebug
   puma (~> 3.11)
   rails (~> 5.2.2, >= 5.2.2.1)

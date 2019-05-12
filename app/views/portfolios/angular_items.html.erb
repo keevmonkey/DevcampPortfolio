@@ -3,7 +3,7 @@
 <p>Back to homepage, <%= link_to "click here", portfolios_path %></p>
 
 
-<h4><%= link_to 'Create a new portfolio item', new_portfolio_path %></h4>
+<h4><%= link_to 'Create a new portfolio item', new_portfolio_path if logged_in?(:site_admin) %></h4>
 
 <% @portfolio_angular_items.each do |portfolio_item| %>
   <%= image_tag(portfolio_item.thumb_image) unless portfolio_item.thumb_image.nil? %>

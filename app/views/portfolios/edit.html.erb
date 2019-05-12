@@ -1,2 +1,4 @@
 <h1>You are now editing</h1>
 <%= render "form", portfolio_item: @portfolio_item%>
+
+<%= link_to "Delete this item", portfolio_path, method: :delete, data: { confirm: 'Are you certain?' } if logged_in?(:site_admin) %>

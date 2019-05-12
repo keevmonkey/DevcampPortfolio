@@ -11,8 +11,10 @@
   <% end %>
 </div>
 
-<%= link_to 'edit', edit_portfolio_path %>
 <%= link_to 'Back', portfolios_path %>
-<%= link_to 'Delete!', portfolio_path, method: :delete, data: { confirm: 'Are you certain?' } %>
+<% if logged_in?(:site_admin) %>
+  <%= link_to 'edit', edit_portfolio_path %>
+  <%= link_to 'Delete!', portfolio_path, method: :delete, data: { confirm: 'Are you certain?' } %>
+<% end %>
 
 <hr>

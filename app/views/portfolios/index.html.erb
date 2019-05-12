@@ -2,7 +2,7 @@
 
 <p>If you want to visit some angular stuff, <%= link_to "click here", portfolio_angular_path %></p>
 
-<h4><%= link_to 'Create a new portfolio item', new_portfolio_path %></h4>
+<h4><%= link_to 'Create a new portfolio item', new_portfolio_path if logged_in?(:site_admin) %></h4>
 
 <%= render partial: 'portfolio_item', collection: @portfolio_items %>
 

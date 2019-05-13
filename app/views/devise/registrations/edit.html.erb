@@ -3,7 +3,6 @@
     <div class="row">
       <div class="col-md-8">
         <h5 class="card-title">Edit <%= resource_name.to_s.humanize %></h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
           <%= render "devise/shared/error_messages", resource: resource %>
 

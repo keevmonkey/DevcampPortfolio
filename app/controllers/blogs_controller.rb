@@ -8,6 +8,9 @@ class BlogsController < ApplicationController
   def index
     @blogs = Blog.all
     @page_title = "My Portfolio Blog"
+    @first_blog = Blog.first_blog
+    @topic_one = Blog.topic_one
+    @topic_three = Blog.topic_three
   end
 
   # GET /blogs/1

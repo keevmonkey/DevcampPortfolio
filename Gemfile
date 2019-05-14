@@ -39,6 +39,8 @@ gem 'khui_View_tool', git: 'https://github.com/keevmonkey/khui_View_tool'
 # Authorisation
 gem 'petergate', '~> 2.0', '>= 2.0.1'
 
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
+
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
 

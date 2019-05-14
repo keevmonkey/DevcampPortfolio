@@ -20,20 +20,20 @@
 
     <!-- Start of container -->
     <div class="container">
-    
+
       <%= yield %>
 
     </div><!-- container -->
 
     <footer class="blog-footer">
-      <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
-      <p>
-        <a href="#">Back to top</a>
-      </p>
+      <div class="container">
+        <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>
+        <p>
+          <a href="#">Back to top</a>
+        </p>
+      </div>
     </footer>
-
-    <%= render 'shared/nav', location: 'bottom' %>
-
+    
     <%= source_helper("blog") %>
   </body>
 </html>

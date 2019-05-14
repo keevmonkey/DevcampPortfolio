@@ -1,5 +1,10 @@
 <div class="blog-post">
   <h2 class="blog-post-title"><%= blog.title %></h2>
+  <% if logged_in?(:site_admin) %>
+    <%= link_to blog.status, toggle_status_blog_path(blog) %> /
+    <%= link_to 'Edit', edit_blog_path(blog) %> /
+    <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+  <% end %>
   <p class="blog-post-meta">Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</p>
   <p><%= blog.body %></p>
 
@@ -7,9 +12,5 @@
     <%= link_to 'Show', blog %>
   </div>
 
-  <% if logged_in?(:site_admin) %>
-    <%= link_to blog.status, toggle_status_blog_path(blog) %>
-    <%= link_to 'Edit', edit_blog_path(blog) %>
-    <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
-  <% end %>
+
 </div><!-- /.blog-post -->

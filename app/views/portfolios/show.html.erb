@@ -1,20 +1,27 @@
-<div>
-  <%= image_tag(@portfolio_item.main_image) %>
-  <h1><%= @portfolio_item.title %></h1>
-  <h3><%= @portfolio_item.subtitle %></h3>
-  <p><%= @portfolio_item.body %></p>
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-7">
+      <%= image_tag(@portfolio_item.main_image) %>
+    </div><!-- col -->
+
+    <div class="col-md-5">
+      <h1><%= @portfolio_item.title %></h1>
+      <p><%= @portfolio_item.subtitle %></p>
+      <hr>
+      <p><%= @portfolio_item.body %></p>
+      <hr>
+      <h3>Technologies Used:</h3>
+      <% @portfolio_item.technologies.each do |t| %>
+      <p><%= t.name %></p>
+      <% end %>
+      
+      <% if logged_in?(:site_admin) %>
+        <%= link_to 'edit', edit_portfolio_path %>
+        <%= link_to 'Delete!', portfolio_path, method: :delete, data: { confirm: 'Are you certain?' } %>
+      <% end %>
+
+    </div>
+
+  </div>
 </div>
-
-<div>
-  <% @portfolio_item.technologies.each do |t| %>
-    <p><%= t.name %></p>
-  <% end %>
-</div>
-
-<%= link_to 'Back', portfolios_path %>
-<% if logged_in?(:site_admin) %>
-  <%= link_to 'edit', edit_portfolio_path %>
-  <%= link_to 'Delete!', portfolio_path, method: :delete, data: { confirm: 'Are you certain?' } %>
-<% end %>
-
-<hr>

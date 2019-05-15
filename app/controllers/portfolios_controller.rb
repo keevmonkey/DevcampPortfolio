@@ -32,12 +32,13 @@ class PortfoliosController < ApplicationController
   end
 
   def edit
+    3.times { @portfolio_item.technologies.build }
   end
 
   def update
     respond_to do |format|
       if @portfolio_item.update(portfolio_item_params)
-        format.html { redirect_to @portfolio_item, notice: 'Portfolio was successfully updated.' }
+        format.html { redirect_to portfolio_show_path(@portfolio_item.id), notice: 'Portfolio was successfully updated.' }
       else
         format.html { render :edit }
       end

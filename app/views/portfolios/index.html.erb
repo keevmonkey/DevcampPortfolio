@@ -1,9 +1,14 @@
-<h1>These are some items</h1>
+<main role="main">
 
-<p>If you want to visit some angular stuff, <%= link_to "click here", portfolio_angular_path %></p>
+  <div class="album py-5 bg-light">
+    <div class="container">
 
-<h4><%= link_to 'Create a new portfolio item', new_portfolio_path if logged_in?(:site_admin) %></h4>
+      <div class="row">
 
-<%= render partial: 'portfolio_item', collection: @portfolio_items %>
+        <%= render partial: 'portfolio_item', collection: @portfolio_items %>
 
-<hr>
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </div><!-- .album -->
+        
+</main>

@@ -1,15 +1,14 @@
-<h1>These are Angular items</h1>
+<main role="main">
 
-<p>Back to homepage, <%= link_to "click here", portfolios_path %></p>
+  <div class="album py-5 bg-light">
+    <div class="container">
 
+      <div class="row">
 
-<h4><%= link_to 'Create a new portfolio item', new_portfolio_path if logged_in?(:site_admin) %></h4>
+        <%= render partial: 'portfolio_item', collection: @portfolio_angular_items %>
 
-<% @portfolio_angular_items.each do |portfolio_item| %>
-  <%= image_tag(portfolio_item.thumb_image) unless portfolio_item.thumb_image.nil? %>
-  <h3><%= link_to portfolio_item.title, portfolio_show_path(portfolio_item.id) %></h3>
-  <p><%= portfolio_item.subtitle %></p>
-  <p><%= portfolio_item.body %></p>
-<% end %>
-
-<hr>
+      </div><!-- .row -->
+    </div><!-- .container -->
+  </div><!-- .album -->
+        
+</main>

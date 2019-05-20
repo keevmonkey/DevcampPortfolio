@@ -116,6 +116,10 @@ img {
 /*
  * CUSTOM STYLES
  */
+.card-image img {
+  width: 100%;
+}
+
 .card-body {
   color: black;
   text-shadow: none;

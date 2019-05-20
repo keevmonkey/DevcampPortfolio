@@ -1,5 +1,4 @@
 class Portfolio < ApplicationRecord
-  include Placeholder
   has_many :technologies, dependent: :destroy
   # configure model to accept nested data for technology model
   # afterwhich, sets basic first validation to reject if attars['name'] is blank
@@ -7,9 +6,11 @@ class Portfolio < ApplicationRecord
                                 reject_if: lambda { |attrs| attrs['name'].blank? }
 
   validates :title, :body, presence: true
-  validates_presence_of :main_image, :thumb_image
 
   scope :non_angular, -> { where.not(subtitle: 'Angular') }
+
+  mount_uploader :thumb_image, PortfolioUploader
+  mount_uploader :main_image, PortfolioUploader
 
   def self.angular
     where(subtitle: 'Angular')
@@ -18,12 +19,4 @@ class Portfolio < ApplicationRecord
   def self.by_position
     order('position ASC')
   end
-
-  after_initialize :set_defaults
-
-  def set_defaults
-    self.main_image   ||= Placeholder.image_generator(height: '600', width: '400')
-    self.thumb_image  ||= Placeholder.image_generator(height: '300', width: '250')
-  end
-
 end

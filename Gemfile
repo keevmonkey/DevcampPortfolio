@@ -31,20 +31,18 @@ gem 'jbuilder', '~> 2.5'
 gem 'friendly_id', '~> 5.2.4'
 gem 'devise', '~> 4.2'
 gem 'cocoon', '~> 1.2', '>= 1.2.12'
-
 gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.5'
 gem 'kaminari', '~> 1.1', '>= 1.1.1'
 # Growl like notification
 gem 'gritter', '~> 1.2'
-
 gem 'carrierwave', '~> 1.0'
 gem 'carrierwave-aws', '~> 1.3'
 gem "fog-aws"
 gem 'mini_magick', '~> 4.9', '>= 4.9.3'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.2'
-
+gem 'redis', '~> 4.1', '>= 4.1.1'
 
 
 # Personal view helper gem that I created for this app

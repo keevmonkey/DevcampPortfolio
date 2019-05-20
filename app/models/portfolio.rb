@@ -11,6 +11,9 @@ class Portfolio < ApplicationRecord
 
   scope :non_angular, -> { where.not(subtitle: 'Angular') }
 
+  mount_uploader :thumb_image, PortfolioUploader
+  mount_uploader :main_image, PortfolioUploader
+
   def self.angular
     where(subtitle: 'Angular')
   end

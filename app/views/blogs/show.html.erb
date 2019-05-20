@@ -4,8 +4,25 @@
     <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
     <h3 class="pb-4 mb-4"><%= @blog.title %></h3>
     <p><%= @blog.body %></p>
-  </main><!-- /.blog-post -->
-  <!-- Start of sidebar -->
+
+    <!-- Start of comments form -->
+    <% unless current_user.is_a?(GuestUser) %>
+      <%= form_for @comment, url: '#' do |f| %>
+        <div class="form-group">
+          <%= f.label :content %>
+          <%= f.text_area :content, class: 'form-control' %>
+        </div>
+
+        <div>
+          <%= f.submit 'Post Comment', class: "btn btn-primary" %>
+        </div>
+      <% end %>
+    <% end %>
+    <!-- end of comments form -->
+
+    <%= render @blog.comments %>
+
+  </main>
   <%= render 'shared/blog_sidebar' %>
 </div><!-- /.row -->
 

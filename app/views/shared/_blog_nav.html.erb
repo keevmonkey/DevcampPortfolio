@@ -11,7 +11,7 @@
     <div id="categories" class="nav-scroller py-1 mb-2">
       <nav class="nav d-flex justify-content-between">
         <% @topics.each do |topic| %>
-          <%= link_to topic.title, blogs_path, class: "p-2 text-muted" %>
+          <%= link_to topic.title, topic_path(topic.id), class: "p-2 text-muted" %>
         <% end %>
       </nav>
     </div>

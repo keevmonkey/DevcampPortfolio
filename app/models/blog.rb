@@ -13,6 +13,10 @@ class Blog < ApplicationRecord
   scope :topic_one, -> { where(topic_id: 1).last }
   scope :topic_three, -> { where(topic_id: 3).last }
 
+  def self.recent
+    order('created_at DESC')
+  end
+
   def set_defaults
     self.topic ||= Topic.first 
   end

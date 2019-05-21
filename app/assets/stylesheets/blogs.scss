@@ -137,6 +137,21 @@ h1, h2, h3, h4, h5, h6 {
 * CUSTOM STYLES
 */
 
+.blog-status {
+  font-style: italic;
+  font-size: 1em;
+  background-color: #ffc107;
+  padding: .1em .8em;
+}
+
+span.blog-status {
+  font-size: .3em;
+  display: inline-block;
+  margin-left: 20px;
+}
+
+
+
 .social-links li {
   font-size: 1.5em;
 }

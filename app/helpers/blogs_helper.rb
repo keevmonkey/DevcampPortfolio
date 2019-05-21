@@ -4,8 +4,12 @@ module BlogsHelper
   end
 
   def blog_status_helper blog
-    if blog.draft?
-      content_tag :span, 'Draft', class: "blog-status"
+    if logged_in?(:site_admin)
+      if blog.draft?
+        content_tag :span, 'Draft', class: "blog-status btn btn-sm btn-warning"
+      else 
+        content_tag :span, 'Published', class: "blog-status btn btn-sm btn-success"
+      end
     end
   end
 end

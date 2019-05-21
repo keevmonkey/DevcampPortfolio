@@ -4,8 +4,13 @@
     <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
     <h3 class="pb-4 mb-4"><%= @blog.title %></h3>
     <p><%= @blog.body %></p>
-  </main><!-- /.blog-post -->
-  <!-- Start of sidebar -->
+
+    <%= render partial: 'comments/comment_form' %>
+
+    <div id="comments" data-blog-id="<%= @blog.id %>">
+      <%= render @blog.comments %>
+    </div>
+  </main>
   <%= render 'shared/blog_sidebar' %>
 </div><!-- /.row -->
 

@@ -1,8 +1,8 @@
 <div class="row">
   <main class="col-md-8 blog-post">
-    <p id="notice"><%= notice %></p>
     <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
     <h3 class="pb-4 mb-4"><%= @blog.title %></h3>
+    <p><%= @blog.topic.title %></p>
     <p><%= @blog.body %></p>
 
     <%= render partial: 'comments/comment_form' %>

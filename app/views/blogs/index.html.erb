@@ -1,8 +1,8 @@
 <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
   <div class="col-md-6 px-0">
-    <h1 class="display-4 font-italic"><%= @first_blog.title %></h1>
-    <p class="lead my-3"><%= @first_blog.body %></p>
-    <p class="lead mb-0"><%= link_to 'Continue reading...', blog_path(@first_blog.id), class: "text-white font-weight-bold" %></p>
+    <h1 class="display-4 font-italic"><%= @latest_blog.title %></h1>
+    <p class="lead my-3"><%= @latest_blog.body %></p>
+    <p class="lead mb-0"><%= link_to 'Continue reading...', blog_path(@latest_blog.id), class: "text-white font-weight-bold" %></p>
   </div>
 </div>
 
@@ -10,11 +10,11 @@
   <div class="col-md-6">
     <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
       <div class="col p-4 d-flex flex-column position-static">
-        <strong class="d-inline-block mb-2 text-primary"><%= @topic_three.topic.title %></strong>
-        <h3 class="mb-0"><%= @topic_three.title %></h3>
-        <div class="mb-1 text-muted">Published <%= distance_of_time_in_words(@topic_three.created_at, Time.now) %> ago</div>
-        <p class="card-text mb-auto"><%= @topic_three.body %></p>
-        <%= link_to 'Continue reading', blog_path(@topic_three.id), class: "stretched-link" %>
+        <strong class="d-inline-block mb-2 text-primary"><%= @rails_latest_blog.topic.title %></strong>
+        <h3 class="mb-0"><%= @rails_latest_blog.title %></h3>
+        <div class="mb-1 text-muted">Published <%= distance_of_time_in_words(@rails_latest_blog.created_at, Time.now) %> ago</div>
+        <p class="card-text mb-auto"><%= @rails_latest_blog.body %></p>
+        <%= link_to 'Continue reading', blog_path(@rails_latest_blog.id), class: "stretched-link" %>
       </div>
       <div class="col-auto d-none d-lg-block">
         <p>INSERT THUMBNAIL HERE</p>
@@ -24,11 +24,11 @@
   <div class="col-md-6">
     <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
       <div class="col p-4 d-flex flex-column position-static">
-        <strong class="d-inline-block mb-2 text-primary"><%= @topic_one.topic.title %></strong>
-        <h3 class="mb-0"><%= @topic_one.title %></h3>
-        <div class="mb-1 text-muted">Published <%= distance_of_time_in_words(@topic_one.created_at, Time.now) %> ago</div>
-        <p class="card-text mb-auto"><%= @topic_one.body %></p>
-        <%= link_to 'Continue reading', blog_path(@topic_one.id), class: "stretched-link" %>
+        <strong class="d-inline-block mb-2 text-primary"><%= @projects_latest_blog.topic.title %></strong>
+        <h3 class="mb-0"><%= @projects_latest_blog.title %></h3>
+        <div class="mb-1 text-muted">Published <%= distance_of_time_in_words(@projects_latest_blog.created_at, Time.now) %> ago</div>
+        <p class="card-text mb-auto"><%= @projects_latest_blog.body %></p>
+        <%= link_to 'Continue reading', blog_path(@projects_latest_blog.id), class: "stretched-link" %>
       </div>
       <div class="col-auto d-none d-lg-block">
         <p>INSERT THUMBNAIL HERE</p>

@@ -8,10 +8,10 @@ class Blog < ApplicationRecord
   has_many :comments, dependent: :destroy
 
   after_initialize :set_defaults
-
-  scope :first_blog, -> { first }
-  scope :topic_one, -> { where(topic_id: 1).last }
-  scope :topic_three, -> { where(topic_id: 3).last }
+  
+  scope :rails_topic, -> { where(topic_id: Topic.where(title: "Rails")) }
+  scope :health_topic, -> { where(topic_id: Topic.where(title: "Health")) }
+  scope :projects_topic, -> { where(topic_id: Topic.where(title: "Projects")) }
 
   def self.recent
     order('created_at DESC')

@@ -15,9 +15,10 @@ class BlogsController < ApplicationController
 
     @page_title = "My Portfolio Blog"
 
-    @first_blog = Blog.first_blog
-    @topic_one = Blog.topic_one
-    @topic_three = Blog.topic_three
+    @latest_blog = Blog.published.last
+    @rails_latest_blog = Blog.rails_topic.last
+    @health_latest_blog= Blog.health_topic.last
+    @projects_latest_blog= Blog.projects_topic.last
   end
 
   # GET /blogs/1

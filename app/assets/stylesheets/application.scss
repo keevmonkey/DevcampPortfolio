@@ -175,5 +175,9 @@ img {
     .google-map iframe{
       width: 100%;
     }
+
+    &.card-body {
+      margin-top: 10px;
+    }
   }
 }

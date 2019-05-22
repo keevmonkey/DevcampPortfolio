@@ -141,8 +141,8 @@ img {
   float: none;
 }
 
-.app-nav span {
-  margin: 0 15px;
+.app-nav {
+  span { margin: 0 15px; }
 }
 
 #background {
@@ -159,4 +159,21 @@ img {
   transform: translateX(-50%) translateY(-50%);
   background: image-url('kl-bg.jpg') no-repeat;
   background-size: cover;
+}
+
+.app-card-container {
+  color: #333;
+  text-align: left;
+
+  .card {
+    padding: 40px;
+
+    .profile img{
+      border: 1px solid grey;
+    }
+
+    .google-map iframe{
+      width: 100%;
+    }
+  }
 }

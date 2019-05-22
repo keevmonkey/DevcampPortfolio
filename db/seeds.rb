@@ -6,19 +6,37 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-3.times do |topic|
-  Topic.create!(title: "Topic: #{topic}")
+User.create!(
+  email: "test@test.com",
+  password: "123456",
+  password_confirmation: "123456",
+  name: "Admin User",
+  roles: "site_admin"
+)
+puts "One Admin User created!"
+
+User.create!(
+  email: "test2@test.com",
+  password: "123456",
+  password_confirmation: "123456",
+  name: "Regular User",
+)
+puts "One Regular User created!"
+
+topics = %w(Rails Health Projects)
+topics.each do |topic|
+  Topic.create!(title: topic)
 end
 puts "=== 3 Topics created ==="
 
-10.times do |blog|
-  Blog.create!(
-    title: "This is a post about #{Faker::Games::Fallout.unique.character}",
+Topic.all.each do |topic|
+  topic.blogs.create!(
+    title: Faker::Games::Fallout.unique.character,
     body: Faker::Games::Fallout.quote,
-    topic_id: Topic.last.id
+    status: "published"
   )
 end
-puts "=== 10 Blog posts created ==="
+puts "Each topic now has 3 blog posts"
 
 9.times do |portfolio_items|
   Portfolio.create!(

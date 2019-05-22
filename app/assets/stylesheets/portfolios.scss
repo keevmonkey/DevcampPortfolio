@@ -5,6 +5,30 @@
 @import "bootstrap";
 @import "gritter";
 
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: font-url('Montserrat-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: 'RobotoSlab', sans-serif;
+  src: font-url('RobotoSlab-Regular.ttf');
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h5, .h5,
+h6, .h6 {
+  font-family: 'RobotoSlab';
+}
+
+body {
+  font-family: 'Montserrat';
+}
+
 
 .jumbotron {
   padding-top: 3rem;

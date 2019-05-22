@@ -9,10 +9,10 @@ module ApplicationHelper
     end
   end
 
-  def source_helper(layout_name)
+  def source_helper(styles)
     if session[:source]
-      greeting = "Thanks for visiting me from #{session[:source]} and you are on the #{layout_name} layout!"
-      content_tag(:h4, greeting, class: "source-greeting")
+      greeting = "Thanks for visiting me from #{session[:source]}, please feel free to #{ link_to 'contact me', contact_path } if you would like to work together.".html_safe
+      content_tag(:h4, greeting, class: styles)
     end
   end
 
@@ -45,11 +45,11 @@ module ApplicationHelper
     ]
   end
 
-  def nav_helper style, tag_type
+  def nav_helper tag_type, tag_class='', style
     nav_links = ''
 
     nav_items.each do |item|
-      nav_links << "<#{tag_type}><a href='#{item[:url]}' class='#{style} #{active? item[:url]}'>#{item[:title]}</a></#{tag_type}>"
+      nav_links << "<#{tag_type} class='#{tag_class}'><a href='#{item[:url]}' class='#{style} #{active? item[:url]}'>#{item[:title]}</a></#{tag_type}>"
     end
     
     nav_links.html_safe

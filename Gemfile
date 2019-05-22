@@ -43,7 +43,8 @@ gem "fog-aws"
 gem 'mini_magick', '~> 4.9', '>= 4.9.3'
 gem 'dotenv-rails', '~> 2.7', '>= 2.7.2'
 gem 'redis', '~> 4.1', '>= 4.1.1'
-
+gem 'redcarpet', '~> 3.4'
+gem 'coderay', '~> 1.1', '>= 1.1.2'
 
 # Personal view helper gem that I created for this app
 gem 'khui_View_tool', git: 'https://github.com/keevmonkey/khui_View_tool'

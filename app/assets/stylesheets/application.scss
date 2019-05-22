@@ -2,6 +2,16 @@
 @import "jquery-ui";
 @import "gritter";
 
+@font-face {
+  font-family: 'Montserrat', sans-serif;
+  src: font-url('Montserrat-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: 'RobotoSlab', sans-serif;
+  src: font-url('RobotoSlab-Regular.ttf');
+}
+
 /*
  * Globals
  */
@@ -34,11 +44,22 @@ body {
 }
 
 body {
+  font-family: 'Montserrat';
   display: -ms-flexbox;
   display: flex;
   color: #fff;
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h5, .h5,
+h6, .h6 {
+  font-family: 'RobotoSlab';
 }
 
 img {
@@ -141,8 +162,8 @@ img {
   float: none;
 }
 
-.app-nav span {
-  margin: 0 15px;
+.app-nav {
+  span { margin: 0 15px; }
 }
 
 #background {
@@ -159,4 +180,34 @@ img {
   transform: translateX(-50%) translateY(-50%);
   background: image-url('kl-bg.jpg') no-repeat;
   background-size: cover;
+}
+
+.app-card-container {
+  color: #333;
+  text-align: left;
+
+  .skills {
+    margin: 20px 0;
+
+    p {
+      margin: 0;
+      margin-top: 10px;
+    }
+  }
+
+  .card {
+    padding: 40px;
+
+    .profile img{
+      border: 1px solid grey;
+    }
+
+    .google-map iframe{
+      width: 100%;
+    }
+
+    &.card-body {
+      margin-top: 10px;
+    }
+  }
 }

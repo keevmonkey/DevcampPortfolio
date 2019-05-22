@@ -1,0 +1,9 @@
+<% if logged_in?(:site_admin) %>
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb blogcrumb pull-right">
+      <%= blog_status_helper blog %>
+      <%= content_tag :li, (link_to fa_icon('pencil-square-o'), edit_blog_path(blog)), class: 'breadcrumb-item' %>
+      <%= content_tag :li, (link_to fa_icon('trash'), blog, method: :delete, data: { confirm: 'Are you sure?' }), class: 'breadcrumb-item active' %>
+    </ol>
+  </nav>
+<% end %>

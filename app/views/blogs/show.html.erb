@@ -7,7 +7,7 @@
         <%= content_tag :li, @blog.title, class: 'breadcrumb-item active' %>
       </ol>
     </nav>
-    <%= render 'admin_actions', blog: @blog %>
+    <%= render 'shared/admin_actions', blog: @blog %>
 
     
     <h3 class="pb-4 mb-4"><%= @blog.title %></h3>

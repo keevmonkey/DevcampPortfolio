@@ -6,9 +6,9 @@ module BlogsHelper
   def blog_status_helper blog
     if logged_in?(:site_admin)
       if blog.draft?
-        content_tag :span, 'Draft', class: "blog-status btn btn-sm btn-warning"
+        content_tag :li, (link_to "Draft", toggle_status_blog_path(blog)), class: 'breadcrumb-item blog-status btn btn-sm btn-warning'
       else 
-        content_tag :span, 'Published', class: "blog-status btn btn-sm btn-success"
+        content_tag :li, (link_to "Published", toggle_status_blog_path(blog)), class: 'breadcrumb-item blog-status btn btn-sm btn-success'
       end
     end
   end

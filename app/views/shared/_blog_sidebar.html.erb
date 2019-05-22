@@ -12,4 +12,11 @@
       <li><%= fa_icon 'facebook' %><a href="https://www.facebook.com/KVINHUI">Facebook</a></li>
     </ol>
   </div>
+
+  <div class="sidebar-topics p-4">
+    <h4 class="font-italic">Topics</h4>
+    <% @sidebar_topics.each do |topic| %>
+      <p><%= link_to topic.title, topic_path(topic) %></p>
+    <% end %>
+  </div>
 </aside><!-- /.blog-sidebar -->
